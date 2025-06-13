@@ -30,6 +30,7 @@ import (
 	"github.com/bpg/terraform-provider-proxmox/fwprovider/cluster/hardwaremapping"
 	"github.com/bpg/terraform-provider-proxmox/fwprovider/cluster/metrics"
 	"github.com/bpg/terraform-provider-proxmox/fwprovider/cluster/options"
+	sdn_zones "github.com/bpg/terraform-provider-proxmox/fwprovider/cluster/sdn/zones"
 	"github.com/bpg/terraform-provider-proxmox/fwprovider/config"
 	"github.com/bpg/terraform-provider-proxmox/fwprovider/nodes"
 	"github.com/bpg/terraform-provider-proxmox/fwprovider/nodes/apt"
@@ -514,6 +515,7 @@ func (p *proxmoxProvider) Resources(_ context.Context) []func() resource.Resourc
 		network.NewLinuxVLANResource,
 		nodes.NewDownloadFileResource,
 		options.NewClusterOptionsResource,
+		sdn_zones.NewSdnZoneResource,
 		vm.NewResource,
 	}
 }

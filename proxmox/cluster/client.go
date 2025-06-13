@@ -15,6 +15,7 @@ import (
 	"github.com/bpg/terraform-provider-proxmox/proxmox/cluster/ha"
 	"github.com/bpg/terraform-provider-proxmox/proxmox/cluster/mapping"
 	"github.com/bpg/terraform-provider-proxmox/proxmox/cluster/metrics"
+	"github.com/bpg/terraform-provider-proxmox/proxmox/cluster/sdn"
 	"github.com/bpg/terraform-provider-proxmox/proxmox/firewall"
 )
 
@@ -53,4 +54,8 @@ func (c *Client) ACME() *acme.Client {
 // Metrics returns a client for managing the cluster's metrics features.
 func (c *Client) Metrics() *metrics.Client {
 	return &metrics.Client{Client: c}
+}
+
+func (c *Client) SDN() *sdn.Client {
+	return &sdn.Client{Client: c}
 }
